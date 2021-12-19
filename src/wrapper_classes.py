@@ -106,7 +106,7 @@ class Model:
                        'GB': GradientBoostingMSE}
 
     __model_names = {'RF': 'Случайный лес',
-                     'GBM': 'Градиентный бустинг'}
+                     'GB': 'Градиентный бустинг'}
     
     __ru_params = {'n_estimators': 'Количество базовых алгоритмов',
                    'max_depth': 'Максимальная глубина',
