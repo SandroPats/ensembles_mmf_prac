@@ -1,0 +1,4 @@
+#!/bin/bash
+
+docker build . -t server
+docker run -i -t --rm -p 5000:5000 server
