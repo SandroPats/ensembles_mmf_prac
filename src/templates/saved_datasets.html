@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Список моделей{% endblock %}
+
+{% block content %}
+
+{% if not_empty == True %}
+<h2>Сохраненные модели:</h2>
+{% for dataset in datasets.values() %}
+<a href="{{ url_for('get_data_info', name=dataset.name) }}">
+    <h3>{{ dataset.name }}, target={{ dataset.has_target() }}</h3>
+</a>
+{% endfor %}
+{% else %}
+<h2>У вас еще нет сохраненных датасетов</h2>
+{% endif %}
+
+<a href="{{ url_for('create_data', invalid_col=False) }}">
+    <button class='button'>Добавить датасет</button>
+</a>
+<br>
+<a href="{{ url_for('get_index') }}">
+    <button class='button'>Назад</button>
+</a>
+
+{% endblock %}

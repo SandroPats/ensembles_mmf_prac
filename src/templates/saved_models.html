@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Список моделей{% endblock %}
+
+{% block content %}
+
+{% if not_empty == True %}
+<h2>Сохраненные модели:</h2>
+{% for name in models %}
+<a href="{{ url_for('get_model_page', name=name) }}">
+    <h3>{{ name }}</h3>
+</a>
+{% endfor %}
+{% else %}
+<h2>У вас еще нет сохраненных моделей</h2>
+{% endif %}
+
+<a href="{{ url_for('create_model') }}">
+    <button class='button'>Добавить модель</button>
+</a>
+<br>
+<a href="{{ url_for('get_index') }}">
+    <button class='button'>Назад</button>
+</a>
+
+{% endblock %}

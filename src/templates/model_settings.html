@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Настройка параметров{% endblock %}
+
+{% block content %}
+
+<h2>
+    Выбор параметров для модели <u>{{ ('случайный лес' if (model == 'RF') else 'градиентный бустинг')}}</u>.
+    <br>
+    Имя модели — <u>{{ name }}</u>.
+</h2>
+
+<form method='POST' action={{ url_for('set_model', model=model, name=name) }}>
+    <div class='field'>
+        <h3>{{ form.n_estimators.label }}</h3> 
+        {{ form.n_estimators(class="input_field") }}
+    </div>
+    <div class='field'>
+        <h3>{{ form.max_depth.label }}</h3> 
+        {{ form.max_depth(class="input_field") }}
+    </div>
+    <div class='field'>
+        <h3>{{ form.feature_subsample_size.label }}</h3> 
+        {{ form.feature_subsample_size(class="input_field") }}
+    </div>
+    {% if model == 'GB' %}
+    <div class='field'>
+        <h3>{{ form.learning_rate.label }}</h3>
+        {{ form.learning_rate(class="input_field") }}
+    </div>
+    {% endif %}
+    <br>
+    <div class='field'>
+        {{ form.submit(class="button") }}
+    </div>
+</form>
+<a href="{{ url_for('create_model') }}">
+    <button class='button'>Назад</button>
+</a>
+<br>
+<a href="{{ url_for('get_index') }}">
+    <button class='button'>На главную</button>
+</a>
+
+{% endblock %}
