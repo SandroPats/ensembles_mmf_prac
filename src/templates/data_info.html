@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %} {{ dataset.name }} {% endblock %}
+
+{% block content %}
+
+<div class='table'>{{ dataset.info.to_html(index=False) | safe }}</div>
+<br>
+<h3>Вид датасета:</h3>
+<div class='raw_data'>{{dataset.get_raw().head().to_html() | safe}}</div>
+<br>
+<a href="{{ url_for('get_data') }}">
+    <button class='button'>Назад</button>
+</a>
+<br>
+<a href="{{ url_for('get_index') }}">
+    <button class='button'>На главную</button>
+</a>
+
+{% endblock %}

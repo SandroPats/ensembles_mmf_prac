@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+
+<h1>Добро пожаловать на веб-сервер для обучения моделей!</h1>
+
+<a href="{{ url_for('create_model') }}"><button class='button'>Новая модель</button></a>
+<br>
+<a href="{{ url_for('get_models') }}"><button class='button'>Сохраненные модели</button></a>
+<br>
+<a href="{{ url_for('get_data') }}"><button class='button'>Сохраненные датасеты</button></a>
+
+
+{% endblock %}

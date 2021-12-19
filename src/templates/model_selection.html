@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Выбор алгоритма{% endblock %}
+
+{% block content %}
+
+<form method='POST' action={{ url_for('create_model') }}>
+    <div class='field'>
+        <h3>{{ form.model.label }}</h3>
+        {{ form.model(class="input_field") }}
+    </div>
+    <div class='field'>
+        <h3>{{ form.name.label }}</h3>
+        {{ form.name(class="input_field") }}
+    </div>
+    <br>
+    <div class='field'>
+        {{ form.submit(class="button") }}
+    </div>
+</form>
+<a href="{{ url_for('get_index') }}"><button class='button'>Назад</button></a>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Настройка датасета{% endblock %}
+
+{% block content %}
+
+<h2>
+    Загрузка и настройка датасета
+</h2>
+
+<form method='POST' enctype="multipart/form-data" action="{{ url_for('create_data', invalid_col=invalid_target_col) }}">
+    <div class='field'>
+        <h3>{{ form.data_file.label }}</h3> 
+        {{ form.data_file() }}
+    </div>
+    <div class='field'>
+        <h3>{{ form.target_col.label }}</h3> 
+        {{ form.target_col(class="input_field") }}
+    </div>
+    {%- if invalid_target_col == True -%}
+    <h4>Неверный столбец целевых значений</h4>
+    {%- endif %}
+    <div class='field'>
+        <h3>{{ form.cat_nan_processing.label }}</h3> 
+        {{ form.cat_nan_processing(class="select_field") }}
+    </div>
+    <div class='field'>
+        <h3>{{ form.num_nan_processing.label }}</h3>
+        {{ form.num_nan_processing(class="select_field") }}
+    </div>
+    <div class='field'>
+        <h3>{{ form.data_name.label }}</h3>
+        {{ form.data_name(class="input_field") }}
+    </div>
+    <br>
+    <div class='field'>
+        {{ form.submit(class="button") }}
+    </div>
+</form>
+<a href="{{ url_for('get_index') }}"><button class='button'>На главную</button></a>
+{% endblock %}

@@ -1,0 +1,53 @@
+.select_field {
+    padding: 15px 20px;
+    text-decoration: none;
+    border-radius: 11px;
+    display: inline-block;
+    font-size: 20px;
+    width: 20%;
+}
+
+.input_field {
+    padding: 15px 20px;
+    text-decoration: none;
+    border-radius: 11px;
+    display: inline-block;
+    font-size: 20px;
+    width: 17.5%;
+}
+  
+.button {
+    background-color: green;
+    text-align: center;
+    color: white;
+    padding: 15px 20px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 11px;
+    display: inline-block;
+    font-size: 20px;
+    width: 20%;
+}
+
+body {
+    color: white;
+    background-color: purple;
+    text-align: center;
+}
+
+h4 {
+    color: red
+}
+
+a {
+    color: orange;
+}
+
+.table {
+    width: 25%;
+    margin: 0 auto;
+}
+
+.raw_data {
+    margin: 0 auto;
+}

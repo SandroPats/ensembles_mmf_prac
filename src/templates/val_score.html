@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Значения RMSE модели {{name}} на валидации{% endblock %}
+
+{% block content %}
+
+<h3>Значения RMSE модели {{name}} на валидации</h3>
+
+<div class='table'>{{val_score.to_html(index=False) | safe}}</div>
+
+<a href="{{ url_for('get_model_page', name=name) }}">
+    <button class='button'>Назад</button>
+</a>
+
+{% endblock %}
