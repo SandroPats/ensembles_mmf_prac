@@ -9,23 +9,15 @@ import custom_forms as cf
 from wrapper_classes import Dataset, Model
 from exceptions import DatasetError, TargetError
 from plotting_funcs import plot_and_save_validation
-import plotly
-import plotly.subplots
-import plotly.graph_objects as go
-from shapely.geometry.polygon import Point
-from shapely.geometry.polygon import Polygon
 
 from collections import namedtuple
 from flask_wtf import FlaskForm
-from flask_bootstrap import Bootstrap
 from flask import Flask, request, url_for, session, send_from_directory
 from flask import render_template, redirect
 
 
 app = Flask(__name__, template_folder='templates')
-app.config['BOOTSTRAP_SERVE_LOCAL'] = True
-app.config['SECRET_KEY'] = 'hello'
-Bootstrap(app)
+app.config['SECRET_KEY'] = 'hellothere'
 
 
 model_dict = {}
