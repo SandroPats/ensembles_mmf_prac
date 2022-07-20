@@ -1,4 +1,4 @@
-## Decision tree ensebmles for the regression task, web server
+## Decision tree ensembles for the regression task, web server
 ### Brief project description
 
 This repository contains an implementations of "Random Forest" and "Gradient Boosting" algorithm and Flask web-server interface to train models.
